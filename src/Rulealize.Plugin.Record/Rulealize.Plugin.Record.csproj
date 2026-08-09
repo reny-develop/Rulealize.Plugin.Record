@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605;CS1591</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Rulealize.Plugin.Record</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Reny</Authors>
+    <Description>Records in Rulealize state: rec.of, rec.map, and the vocabulary for reading and writing a key that is computed rather than written down.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/reny-develop/Rulealize.Plugin.Record</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Rulealize.Abstraction" Version="0.3.0" />
+  </ItemGroup>
+
+</Project>
