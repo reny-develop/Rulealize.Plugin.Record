@@ -29,7 +29,7 @@ namespace Rulealize.Plugin.Record
     /// <para>
     /// A key the record does not have is an evaluation error, and this is where the plugin
     /// parts company with <c>grid.at</c>. A board has squares that legitimately do not exist,
-    /// so reading off the edge has a real answer and Othello's capture rule depends on
+    /// so reading off the edge has a real answer and Reversi's capture rule depends on
     /// getting it. A record's keys are all declared; asking for one that is not there is a
     /// mistake, and no rule anywhere is relying on it being quiet.
     /// </para>

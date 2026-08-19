@@ -9,9 +9,10 @@
 | Depends on | [the value model](https://github.com/reny-develop/Rulealize.Abstraction/blob/main/doc/value-model.md), and nothing else |
 | Notation | [how a plugin specification is written](https://github.com/reny-develop/Rulealize.Abstraction/blob/main/doc/specification-notation.md) |
 
-Puts a record in the state and reads and writes it by a **computed key**. How the design
-was arrived at is in [collections](https://github.com/reny-develop/Rulealize/blob/main/doc/collections.md); what asked for it is
-[shogi](https://github.com/reny-develop/Rulealize/blob/main/doc/dsl-example-shogi.md).
+Puts a record in the state and reads and writes it by a **computed key**. What asked for it
+was shogi's hand. `state.set`'s `path` is a literal, so "increment the counter for piece
+kind `@kind`" is unsayable and all fourteen kinds had to be written out — 72 of
+`shogi.json`'s 925 lines, about 8%, were boilerplate for that one field.
 
 ## Paths stay literal
 
@@ -109,10 +110,9 @@ entire reason this plugin exists.
   keys may not be known in advance. That case then arrived — roster assigns real people to
   real shifts — and did not want an open record: the people belong in a
   [`type.list`](https://github.com/reny-develop/Rulealize.Plugin.TypeSchema/blob/main/doc/specification.md) of `rec.of`, because **a key set fixed by the instance is not
-  a key set at all, it is a list**. Roster's [notes §4.1](https://github.com/reny-develop/Rulealize/blob/main/doc/dsl-example-roster.md) work
-  through the distinction, and it is the same one that decides between `rec.of` and
-  `rec.map`: `rec.map`'s keys are right when the domain fixes them, as shogi's seven piece
-  kinds are fixed by the rules of shogi.
+  a key set at all, it is a list**. It is the same distinction that decides between `rec.of`
+  and `rec.map`: `rec.map`'s keys are right when the domain fixes them, as shogi's seven
+  piece kinds are fixed by the rules of shogi.
 - **A record cannot be an input argument, and that is correct.** It has no canonical text,
   so a domain returning records fails when an argument is resolved. A compound input uses
   [Tuple](https://github.com/reny-develop/Rulealize.Plugin.Tuple/blob/main/doc/specification.md), which exists for exactly that.
