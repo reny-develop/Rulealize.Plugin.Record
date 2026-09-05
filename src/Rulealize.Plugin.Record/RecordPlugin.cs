@@ -33,7 +33,7 @@ namespace Rulealize.Plugin.Record
     {
         /// <inheritdoc />
         public PluginManifest Manifest { get; } =
-            new("Rulealize.Plugin.Record", new Version(1, 0, 0), "rec");
+            new("Rulealize.Plugin.Record", new Version(1, 0, 1), "rec");
 
         /// <inheritdoc />
         public void Register(IPluginRegistry registry)

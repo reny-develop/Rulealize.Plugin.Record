@@ -14,7 +14,7 @@
 
   <PropertyGroup>
     <PackageId>Rulealize.Plugin.Record</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Reny</Authors>
     <Description>Records in Rulealize state: rec.of, rec.map, and the vocabulary for reading and writing a key that is computed rather than written down.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Rulealize.Abstraction" Version="0.3.0" />
+    <PackageReference Include="Rulealize.Abstraction" Version="0.4.0" />
   </ItemGroup>
 
 </Project>
