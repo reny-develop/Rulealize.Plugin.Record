@@ -35,8 +35,20 @@ not writable, for the same reason `"board.d3"` is not.
 | `rec.has` | expression | `{ "op": "rec.has", "record": <expression>, "key": <expression:Text> }` |
 | `rec.with` | expression | `{ "op": "rec.with", "record": <expression>, "key": <expression>, "value": <expression> }` |
 | `rec.keys` | expression | `{ "op": "rec.keys", "of": <expression> }` |
-| `rec.set` | effect | `{ "op": "rec.set", "target": "$<field>", "key": <expression>, "value": <expression> }` |
-| `rec.update` | effect | `{ "op": "rec.update", "target": "$<field>", "key": <expression>, "as": "<name>", "value": <expression> }` |
+| `rec.set` | effect | `{ "op": "rec.set", "target": <state field>, "key": <expression>, "value": <expression> }` |
+| `rec.update` | effect | `{ "op": "rec.update", "target": <state field>, "key": <expression>, "as": "<name>", "value": <expression> }` |
+
+`rec.set` and `rec.update` take their `target` as a state field — written `"$hand"`, and
+resolved when the rule set is compiled — whose schema has to be a `rec.of` or a `rec.map`.
+Both halves are build errors:
+
+```
+  /inputs/spend/effects[0]/target: must denote a state field, such as "$hand".
+  /inputs/spend/effects[0]/target: 'tally' is not a record.
+```
+
+The same seam `grid.set` and `graph.set` reach a field through, and the same one a third-party
+vocabulary uses — see [reaching a writable state field](https://github.com/reny-develop/Rulealize.Abstraction/blob/main/README.md#reaching-a-writable-state-field).
 
 ## The key set is closed
 
